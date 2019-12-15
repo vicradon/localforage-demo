@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "build":"parcel build index.html"
+    "build":"parcel build index.html --output public"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/Vicradon/localforage-demo#readme",
   "dependencies": {
-    "lo": "^0.40.0",
     "localforage": "^1.7.3"
   },
   "devDependencies": {

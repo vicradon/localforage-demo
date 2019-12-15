@@ -1,6 +1,6 @@
 const $ = n => document.querySelector(n);
 const localforage = require('localforage')
-    // "predeploy": "rm -rf dist && parcel build index.html --public-url github.com/vicradon/localforage-demo",
+// "predeploy": "rm -rf dist && parcel build index.html --public-url github.com/vicradon/localforage-demo",
 
 const nodes = {
   enterTitle: $('.enter-title'),

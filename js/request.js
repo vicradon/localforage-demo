@@ -1,5 +1,4 @@
 const $ = n => document.querySelector(n);
-const log = console.log
 const localforage = require('localforage')
 
 

@@ -22,7 +22,7 @@ if (workbox) {
   },
   {
     "url": "js/localforage.min.js",
-    "revision": "6de1bf1f7f98328eba5295e0e8a00110"
+    "revision": "862e9e065bcfe3944871cbf66229b3fd"
   },
   {
     "url": "js/request.js",

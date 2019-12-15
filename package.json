@@ -7,7 +7,7 @@
   "description": "A local forage demo",
   "license": "MIT",
   "scripts": {
-    "copy": "copyfiles -u 1 src/**/**/* src/**/* src/* build",
+    "copy": "copyfiles -u 1 src/**/**/* src/**/* src/* public",
     "build": "npm run copy && workbox injectManifest workbox-config.js",
     "start": "node server.js"
   },

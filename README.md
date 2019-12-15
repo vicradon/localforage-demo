@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/892a13cf-09d2-496f-b54d-5e69b4b4b8f2/deploy-status)](https://app.netlify.com/sites/localforage-demo/deploys)
+
 # Builiding an offline ready app using workbox CLI
 
 This project was made with the sole extent of learning workbox and localforage. During the project build stage, I discovered new ways to develop and write code. I shared a few things I learnt along the way.

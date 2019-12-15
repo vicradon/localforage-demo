@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Offline</title>
+  <style>
+    .offline {
+      display:flex;
+      justify-content: space-evenly;
+      flex-flow: column wrap;
+      align-items: center;
+      padding: 2rem;
+    }
+    .go-home {
+      border: 1px solid var(--primary-color);
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 2px;
+    }
+    .go-home a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline">
+    <div class="info">
+      <h1>You are Offline</h1>
+      <p>Try reconnecting or just <b>go home</b> and add a few posts</p>
+    </div>
+
+    <button class="go-home"><a href="../index.html">Go Home</a></button>
+  </div>
+</body>
+</html>

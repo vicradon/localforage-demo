@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stuff | Local Forage</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/keyframes.css">
+
+  <link rel="icon" href="./icons/favicon.ico" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-status-bar" content="steelblue">
+  <meta name="theme-color" content="steelblue">
+  <style>
+    .post-form {
+      width: 400px;
+      display: grid;
+      row-gap: 1rem;
+    }
+
+    .add-post {
+      display: flex;
+      margin: 1rem 0;
+      justify-content: center;
+    }
+
+    .enter-content {
+      min-height: 7rem;
+    }
+
+    .request-post {
+      display: grid;
+      row-gap: 1rem;
+    }
+
+    .container {
+      display: grid;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href='/'>Enter Post</a>
+    <a href='/request.html'>Request Post</a>
+  </nav>
+  <main class="index-main">
+    <div class="container">
+
+      <div class="add-post">
+
+        <div class="post-form">
+          <h2>Enter Post</h2>
+
+          <input value="" class="enter-title" type="text" placeholder="enter title">
+          <textarea class="enter-content" name="" id="" placeholder="enter content"></textarea>
+          <button class="submit-post">Submit</button>
+        </div>
+      </div>
+
+      <div class="posts">
+        <div class="normal-post-flow">
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <script src="./js/localforage.min.js"></script>
+  <script src="./js/index.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log(`Service Worker registered! Scope: ${registration.scope}`);
+          })
+          .catch(err => {
+            console.log(`Service Worker registration failed: ${err}`);
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>

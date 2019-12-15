@@ -4,6 +4,8 @@
 
 This project was made with the sole extent of learning workbox and localforage. During the project build stage, I discovered new ways to develop and write code. I shared a few things I learnt along the way.
 
+You can check out the app here https://localforage-demo.netlify.com/
+
 ## Using Workbox CLI
 1. Use express or possibly parcel to run build processes
 2. Using express means you need __copyfiles__, a library that does copying on the terminal

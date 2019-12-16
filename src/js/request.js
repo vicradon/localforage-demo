@@ -36,11 +36,6 @@ function postComp(title, content, id) {
     <div data-id = ${id} class = 'post'>
       <h3>${title}</h3>
       <p>${stuff}</p>
-
-      <div class = 'post-actions'>
-        <button type = "button" class = 'edit-post'>Edit</button>
-        <button type = "button" class = 'delete-post'>Delete</button>
-      </div>
     </div>
   `
 }

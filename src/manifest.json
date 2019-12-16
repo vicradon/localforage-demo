@@ -33,8 +33,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "steelblue",
-    "background_color": "steelblue",
+    "theme_color": "#4682b4",
+    "background_color": "#4682b4",
     "display": "standalone",
     "start_url":"/index.html",
     "orientation":"portrait-primary"

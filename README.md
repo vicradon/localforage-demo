@@ -6,6 +6,8 @@ This project was made with the sole extent of learning workbox and localforage. 
 
 You can check out the app here https://localforage-demo.netlify.com/
 
+One thing to note is that modern JavaScript apps can still have html in them. Tools such as webpack and parcel just work on the JavaScript. 
+
 ## Using Workbox CLI
 1. Use express or possibly parcel to run build processes
 2. Using express means you need __copyfiles__, a library that does copying on the terminal

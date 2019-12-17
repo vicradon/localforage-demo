@@ -26,19 +26,19 @@ if (workbox) {
   },
   {
     "url": "js/request.js",
-    "revision": "c738e40011a18eccb4ba6eac5cdcf414"
+    "revision": "b2dfb6f8b1a4376a03eeb530341936a0"
   },
   {
     "url": "pages/404.html",
-    "revision": "bc0395a5937db42145505e1a9dab3d1a"
+    "revision": "e3dbbe1504e95464c2abd3a043202520"
   },
   {
     "url": "pages/offline.html",
-    "revision": "1a1bb0d1fb4af5f645099b064dbe721e"
+    "revision": "ae875ead9473b235efec4165e86e7fc5"
   },
   {
     "url": "request.html",
-    "revision": "8bc66f6d8ce4d4c5b653a7391f7e5c82"
+    "revision": "8e9bf63a4d02dfe2891c60d5c2661312"
   }
 ]);
 

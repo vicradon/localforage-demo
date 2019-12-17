@@ -15,10 +15,10 @@
     "localforage"
   ],
   "devDependencies": {
-    "express": "^4.17.1",
     "copyfiles": "^2.1.1",
+    "express": "^4.17.1",
     "parcel": "^1.12.4",
-     "workbox-sw":"^4.3.1"
+    "workbox-cli": "^4.3.1"
   },
   "dependencies": {
     "localforage": "^1.7.3"

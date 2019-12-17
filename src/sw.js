@@ -6,7 +6,10 @@ if (workbox) {
 
   workbox.precaching.precacheAndRoute([]);
 
-
+  // this.addEventListener('activate', () => {
+  //   workbox.precaching.cleanupOutdatedCache();
+  // })
+  
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }

@@ -6,10 +6,14 @@
   "author": "Vicradon <vicraph7@gmail.com>",
   "description": "A local forage demo",
   "license": "MIT",
+  "watch": {
+    "build": ["/src/sw.js"]
+  },
   "scripts": {
     "copy": "copyfiles -u 1 src/**/**/* src/**/* src/* public",
     "build": "npm run copy && workbox injectManifest workbox-config.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "npm-watch build"
   },
   "keywords": [
     "localforage"
@@ -21,6 +25,7 @@
     "workbox-cli": "^4.3.1"
   },
   "dependencies": {
-    "localforage": "^1.7.3"
+    "localforage": "^1.7.3",
+    "npm-watch": "^0.6.0"
   }
 }

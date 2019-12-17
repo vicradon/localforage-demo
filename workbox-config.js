@@ -2,8 +2,10 @@ module.exports = {
   "globDirectory": "public/",
   "globPatterns": [
     "**/*.css",
+    "js/index.js",
+    "js/request.js",
     "index.html",
-    "icons/favicon.ico",
+    // "icons/favicon.ico",
     "pages/offline.html",
     "pages/404.html"
   ],

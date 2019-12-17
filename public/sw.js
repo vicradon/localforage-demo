@@ -3,6 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox
 if (workbox) {
   console.log(`Yay! Workbox is loaded 🎉`);
 
+
   workbox.precaching.precacheAndRoute([
   {
     "url": "css/keyframes.css",
@@ -13,12 +14,16 @@ if (workbox) {
     "revision": "5dde884d5e9dece5364927d87be71b73"
   },
   {
-    "url": "index.html",
-    "revision": "f679d3a00258507926c39248112e48bd"
+    "url": "js/index.js",
+    "revision": "a2977a76d591245c6836c2004d1f4d84"
   },
   {
-    "url": "icons/favicon.ico",
-    "revision": "7575174179418593302e37022e48a9cf"
+    "url": "js/request.js",
+    "revision": "b2dfb6f8b1a4376a03eeb530341936a0"
+  },
+  {
+    "url": "index.html",
+    "revision": "f679d3a00258507926c39248112e48bd"
   },
   {
     "url": "pages/offline.html",
@@ -29,34 +34,6 @@ if (workbox) {
     "revision": "e3dbbe1504e95464c2abd3a043202520"
   }
 ]);
-
-
-  workbox.strategies.staleWhileRevalidate({
-    cacheName: 'cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50,
-        maxAgeSeconds: 365 * 30 * 24 * 60 * 60, // 1 year
-      })
-    ]
-  });
-  
-  this.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
-      event.respondWith(
-        fetch(event.request.url).catch(error => {
-          return caches.match('pages/offline.html');
-        })
-      );
-    }
-    else {
-      event.respondWith(caches.match(event.request)
-        .then(function (response) {
-          return response || fetch(event.request);
-        })
-      );
-    }
-  });
 
 
 } else {

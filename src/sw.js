@@ -6,7 +6,7 @@ if (workbox) {
   workbox.precaching.precacheAndRoute([]);
 
 
-  const htmlHandler = workbox.strategies.cacheFirst({
+  workbox.strategies.cacheFirst({
     cacheName: 'cache',
     plugins: [
       new workbox.expiration.Plugin({
@@ -15,18 +15,24 @@ if (workbox) {
       })
     ]
   });
-
-  workbox.routing.registerRoute(/\.html/, args => {
-    return htmlHandler.handle(args).then(response => {
-      if (!response) {
-        return caches.match('pages/offline.html');
-      } else if (response.status === 404) {
-        return caches.match('pages/404.html');
-      }
-      return response;
-    });
-  });
   
+  this.addEventListener('fetch', event => {
+    if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
+      event.respondWith(
+        fetch(event.request.url).catch(error => {
+          return caches.match('pages/offline.html');
+        })
+      );
+    }
+    else {
+      event.respondWith(caches.match(event.request)
+        .then(function (response) {
+          return response || fetch(event.request);
+        })
+      );
+    }
+  });
+
 
 } else {
   console.log(`Boo! Workbox didn't load 😬`);

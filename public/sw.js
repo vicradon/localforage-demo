@@ -14,36 +14,20 @@ if (workbox) {
   },
   {
     "url": "index.html",
-    "revision": "61b701a0c2195d3b5002999e8c5d622b"
+    "revision": "f679d3a00258507926c39248112e48bd"
   },
   {
-    "url": "js/index.js",
-    "revision": "a2977a76d591245c6836c2004d1f4d84"
-  },
-  {
-    "url": "js/localforage.min.js",
-    "revision": "862e9e065bcfe3944871cbf66229b3fd"
-  },
-  {
-    "url": "js/request.js",
-    "revision": "b2dfb6f8b1a4376a03eeb530341936a0"
+    "url": "pages/offline.html",
+    "revision": "36205f13735aff01a19d308f4a046386"
   },
   {
     "url": "pages/404.html",
     "revision": "e3dbbe1504e95464c2abd3a043202520"
-  },
-  {
-    "url": "pages/offline.html",
-    "revision": "ae875ead9473b235efec4165e86e7fc5"
-  },
-  {
-    "url": "request.html",
-    "revision": "8e9bf63a4d02dfe2891c60d5c2661312"
   }
 ]);
 
 
-  const htmlHandler = workbox.strategies.cacheFirst({
+  workbox.strategies.cacheFirst({
     cacheName: 'cache',
     plugins: [
       new workbox.expiration.Plugin({
@@ -52,18 +36,24 @@ if (workbox) {
       })
     ]
   });
-
-  workbox.routing.registerRoute(/\.html/, args => {
-    return htmlHandler.handle(args).then(response => {
-      if (!response) {
-        return caches.match('pages/offline.html');
-      } else if (response.status === 404) {
-        return caches.match('pages/404.html');
-      }
-      return response;
-    });
-  });
   
+  this.addEventListener('fetch', event => {
+    if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
+      event.respondWith(
+        fetch(event.request.url).catch(error => {
+          return caches.match('pages/offline.html');
+        })
+      );
+    }
+    else {
+      event.respondWith(caches.match(event.request)
+        .then(function (response) {
+          return response || fetch(event.request);
+        })
+      );
+    }
+  });
+
 
 } else {
   console.log(`Boo! Workbox didn't load 😬`);

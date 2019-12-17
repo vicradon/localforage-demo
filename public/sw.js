@@ -17,6 +17,10 @@ if (workbox) {
     "revision": "f679d3a00258507926c39248112e48bd"
   },
   {
+    "url": "icons/favicon.ico",
+    "revision": "7575174179418593302e37022e48a9cf"
+  },
+  {
     "url": "pages/offline.html",
     "revision": "36205f13735aff01a19d308f4a046386"
   },
@@ -27,7 +31,7 @@ if (workbox) {
 ]);
 
 
-  workbox.strategies.cacheFirst({
+  workbox.strategies.staleWhileRevalidate({
     cacheName: 'cache',
     plugins: [
       new workbox.expiration.Plugin({

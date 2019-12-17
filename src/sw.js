@@ -6,7 +6,7 @@ if (workbox) {
   workbox.precaching.precacheAndRoute([]);
 
 
-  workbox.strategies.cacheFirst({
+  workbox.strategies.staleWhileRevalidate({
     cacheName: 'cache',
     plugins: [
       new workbox.expiration.Plugin({

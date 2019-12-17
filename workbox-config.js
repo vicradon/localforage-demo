@@ -3,6 +3,7 @@ module.exports = {
   "globPatterns": [
     "**/*.css",
     "index.html",
+    "icons/favicon.ico",
     "pages/offline.html",
     "pages/404.html"
   ],
